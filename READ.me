@@ -1,125 +1,52 @@
-🚗 Dashboard Interactivo de Anuncios de Vehículos
-Un dashboard interactivo desarrollado con Streamlit que permite visualizar y analizar datos de anuncios de vehículos usados de manera dinámica y atractiva.
-📋 Características
-🎛️ Filtros Interactivos
+Dashboard Interactivo de Anuncios de Vehículos 🚗📊
+Este proyecto es una aplicación web interactiva desarrollada con Streamlit que permite explorar un conjunto de datos de anuncios de vehículos en EE.UU.
+La aplicación ofrece visualizaciones dinámicas para analizar precios, años de modelos, condiciones y otras características de los vehículos.
 
-Rango de años: Slider para seleccionar el rango de años del modelo
-Condición del vehículo: Filtro múltiple por condición (nuevo, usado, etc.)
-Marca del vehículo: Filtro múltiple por fabricante
-Categoría de color: Selector para colorear gráficos por diferentes variables
+Funcionalidades ✨
+Filtros interactivos por año del modelo, condición y marca del vehículo.
 
-📊 Visualizaciones
-1. Histograma de Precios
+Visualización de histogramas de precios con colores según categorías seleccionadas.
 
-Distribución de precios con colores por categoría seleccionada
-50 bins para análisis detallado
-Diseño optimizado con transparencia y bordes
+Gráfico de dispersión animado que muestra la relación entre kilómetro recorrido y precio a lo largo de los años del modelo.
 
-2. Gráfico de Dispersión Animado
+Información detallada al pasar el cursor sobre cada punto en los gráficos.
 
-Ejes: Kilometraje (X) vs Precio (Y)
-Animación: Por año del modelo
-Tamaño de burbujas: Proporcional al kilometraje
-Colores: Diferenciados por marca o categoría seleccionada
-Información detallada: Hover con datos del vehículo
+Instalación ⚙️
+Clona este repositorio:
 
-🎨 Diseño Visual
+git clone https://github.com/EmeOke/Sprint7.git
+cd Sprint7
 
-Paleta de colores distintiva para cada marca
-Bordes blancos en burbujas para mejor visibilidad
-Transparencia optimizada para superposiciones
-Leyenda posicionada estratégicamente
+Crea un entorno virtual y actívalo:
 
-🛠️ Tecnologías Utilizadas
+python -m venv vehicles_env
+source vehicles_env/bin/activate (Linux/Mac)
+vehicles_env\Scripts\activate (Windows)
 
-Streamlit: Framework principal para la aplicación web
-Pandas: Manipulación y análisis de datos
-Plotly Express: Visualizaciones interactivas y animaciones
-Python: Lenguaje de programación base
+Instala las dependencias:
 
-📂 Estructura del Proyecto
-proyecto/
-├── app.py                 # Aplicación principal de Streamlit
-├── vehicles_us.csv        # Dataset de vehículos
-├── README.md             # Este archivo
-└── requirements.txt      # Dependencias del proyecto
-🚀 Instalación y Uso
-Prerrequisitos
-bashpip install streamlit pandas plotly
-Ejecutar la aplicación
-bashstreamlit run app.py
-Archivo de datos requerido
-Asegúrate de tener el archivo vehicles_us.csv en el mismo directorio con las siguientes columnas:
+pip install -r requirements.txt
 
-model: Modelo del vehículo
-model_year: Año del modelo
-condition: Condición del vehículo
-price: Precio del vehículo
-odometer: Kilometraje
-fuel: Tipo de combustible
-type: Tipo de vehículo
-transmission: Tipo de transmisión
-paint_color: Color del vehículo
+Uso 🚀
+Para ejecutar la aplicación localmente, usa:
 
-🎯 Funcionalidades Principales
-Filtrado Dinámico
-
-Los filtros se aplican en tiempo real
-Actualización automática de estadísticas
-Preservación de la experiencia del usuario
-
-Animación Temporal
-
-Visualización cronológica ordenada
-Controles de velocidad configurables
-Transiciones suaves entre frames
-
-Análisis Interactivo
-
-Información detallada al pasar el cursor
-Estadísticas actualizadas según filtros
-Comparación visual entre marcas/modelos
-
-📈 Casos de Uso
-
-Análisis de Mercado: Identificar tendencias de precios por marca y año
-Comparación de Vehículos: Evaluar relación precio-kilometraje
-Investigación Temporal: Observar evolución del mercado automotriz
-Toma de Decisiones: Información para compradores y vendedores
-
-🔧 Personalización
-Modificar Paleta de Colores
-python# Cambiar en la línea del código:
-color_discrete_sequence=px.colors.qualitative.Set1
-# Por otras opciones como:
-# px.colors.qualitative.Plotly
-# px.colors.qualitative.Dark24
-# px.colors.qualitative.Vivid
-Ajustar Velocidad de Animación
-python# Modificar los valores de duration:
-"frame": {"duration": 300, "redraw": True}  # Cambiar 300 por el valor deseado
-"transition": {"duration": 300}             # Cambiar 300 por el valor deseado
-Límite de Datos para Rendimiento
-python# Ajustar el límite de puntos en la animación:
-if len(df_filtered_no_na) > 3000:  # Cambiar 3000 por el valor deseado
-
-🐛 Solución de Problemas
-Problema: Animación lenta
-Solución: Reducir el tamaño del dataset o ajustar el límite de sampling
-Problema: Colores no distintivos
-Solución: Cambiar la paleta de colores en la configuración
-Problema: Datos faltantes
-Solución: Verificar que el CSV tenga todas las columnas requeridas
-
-📊 Ejemplo de Uso
-python# Ejecutar el dashboard
 streamlit run app.py
 
-# Navegar a: http://localhost:8501
-# 1. Ajustar filtros en el sidebar
-# 2. Seleccionar categoría de color
-# 3. Hacer clic en "Mostrar gráfico de dispersión animado"
-# 4. Observar la animación temporal
+Esto abrirá la app en tu navegador en http://localhost:8501
 
-📞 Soporte
-Para reportar bugs o solicitar features, por favor abre un issue en el repositorio del proyecto.
+Estructura del proyecto 🗂️
+.
+├── README.md
+├── app.py
+├── vehicles_us.csv
+├── requirements.txt
+└── notebooks
+  └── EDA.ipynb
+
+Despliegue ☁️
+La aplicación está preparada para ser desplegada en Render.com o cualquier servicio similar que soporte Python y Streamlit.
+
+Licencia 📄
+Este proyecto es para fines educativos.
+
+¡Disfruta explorando los datos de vehículos! 🚗📈
